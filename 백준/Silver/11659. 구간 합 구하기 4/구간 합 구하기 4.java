@@ -17,12 +17,12 @@ public class Main {
         }
 
         StringBuilder sb = new StringBuilder();
-        
+
         for (int i = 0; i < question; i++){
-            StringTokenizer st1 = new StringTokenizer(br.readLine());
-            int N1 = Integer.parseInt(st1.nextToken());
-            int N2 = Integer.parseInt(st1.nextToken());
-            
+            st = new StringTokenizer(br.readLine());
+            int N1 = Integer.parseInt(st.nextToken());
+            int N2 = Integer.parseInt(st.nextToken());
+
             sb.append(S[N2] - S[N1-1]).append("\n");
         }
         System.out.println(sb);
