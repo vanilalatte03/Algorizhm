@@ -24,12 +24,6 @@ public class Main {
             map = new int[I][I];
             visited = new boolean[I][I];
 
-            for(int j = 0; j < I; j++){
-                for(int k = 0; k < I; k++){
-                    map[j][k] = 0;
-                }
-            }
-
             N = sc.nextInt();
             M = sc.nextInt();
             fN = sc.nextInt();
