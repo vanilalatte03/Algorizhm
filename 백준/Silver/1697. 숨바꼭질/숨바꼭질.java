@@ -10,12 +10,14 @@ public class Main{
         N = sc.nextInt();
         K = sc.nextInt();
 
-        time = new int[1000001];
-        visited = new boolean[1000001];
-
-        bfs(N);
-
-        System.out.println(time[K]);
+        if (N == K) {
+            System.out.println(0);
+        } else {
+            time = new int[100001];
+            visited = new boolean[100001];
+            bfs(N);
+            System.out.println(time[K]);
+        }
     }
 
     public static void bfs(int StartPos){
@@ -25,6 +27,10 @@ public class Main{
 
         while(!queue.isEmpty()){
             int currentPos = queue.poll();
+
+            if(currentPos == K){
+                continue;
+            }
 
             int next1 = currentPos - 1;
             if (next1 >= 0 && !visited[next1]) {
