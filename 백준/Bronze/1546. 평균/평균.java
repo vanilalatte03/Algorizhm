@@ -8,8 +8,8 @@ public class Main {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        double max = 0;
-        double sum = 0;
+        long max = 0;
+        long sum = 0;
 
         for (int i = 0; i < N; i++) {
             int score = Integer.parseInt(st.nextToken());
@@ -20,10 +20,8 @@ public class Main {
 
             sum += score;
         }
-
-        double newAvg = (sum * 100) / max / N;
-
-        System.out.println(newAvg);
+        
+        System.out.println(sum * 100.0 / max / N);
 
     }
 }
