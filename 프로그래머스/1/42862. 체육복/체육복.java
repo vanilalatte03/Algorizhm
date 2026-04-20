@@ -6,17 +6,17 @@ class Solution {
             student[i] = 1;
         }
         
-        // 2. 도난 처리
+        // 2. lost 학생은 -1 처리
         for (int i = 0; i < lost.length; i++) {
             student[lost[i] - 1]--;
         }
 
-        // 3. 여벌 처리
+        // 3. reserve 학생은 +1 처리
         for (int i = 0; i < reserve.length; i++) {
             student[reserve[i] - 1]++;
         }
-        
-        //4. 빌려주기
+
+        // 4. 체육복이 없는 학생(0)을 만나면 앞/뒤 학생에게 빌릴 수 있는지 확인
         for (int i = 0; i < n; i++) {
             if (student[i] == 0) {
                 if (i > 0 && student[i - 1] == 2) {
@@ -29,7 +29,7 @@ class Solution {
             }
         }
         
-        // 5. 수업 들을 수 있는 학생 수 세기
+        // 5. 마지막에 체육복이 1개 이상 있는 학생 수 반환
         int answer = 0;
         for (int i = 0; i < n; i++) {
             if (student[i] >= 1) {
